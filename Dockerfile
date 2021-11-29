@@ -2,4 +2,4 @@
 
 FROM node:latest
 RUN apt-get update
-CMD ["echo", "hello"]
+CMD ["bash"]
