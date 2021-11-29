@@ -11,5 +11,5 @@ docker-dev:
 	docker run -d \
 	-it \
 	--name devtest \
-	--mount type=bind,source="$(PWD)"/src,target=/home \
+	--mount type=bind,source="$(PWD)"/src,target=/app \
 	$(repo_name):latest
