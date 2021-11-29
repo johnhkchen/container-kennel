@@ -5,3 +5,11 @@ git_url = "https://github.com/$(repo_name).git\#$(target_branch)"
 .PHONY: docker-build
 docker-build:
 	docker build -t $(repo_name) $(git_url)
+
+.PHONY: docker-dev
+docker-dev:
+	docker run -d \
+	-it \
+	--name devtest \
+	--mount type=bind,source="$(PWD)"/src,target=/home \
+	$(repo_name):latest
